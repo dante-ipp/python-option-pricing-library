@@ -31,7 +31,11 @@
           packages = [
             pythonEnv
           ];
+          shellHook = ''
+            export PYTHONPATH=$(pwd):$PYTHONPATHH
+          '';
         };
+
       }
 
     );
