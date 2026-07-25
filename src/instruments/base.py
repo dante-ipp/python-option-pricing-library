@@ -1,5 +1,5 @@
 class Option:
-  def __init__(self, strike: float, maturity: float):
+  def __init__(self, strike: float, maturity: float, is_american: bool = False):
     """
     A base option class
 
@@ -9,6 +9,7 @@ class Option:
     """
     self.strike = strike
     self.maturity = maturity
+    self.is_american = is_american
 
   def get_payoff(self, spot_price: float) -> float:
       """

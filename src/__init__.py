@@ -1,8 +1,12 @@
-from .instruments import EuropeanPutOption, EuropeanCallOption
-from .engines import BinomialEngine
+from .instruments import EuropeanPutOption, EuropeanCallOption, AmericanPutOption, AmericanCallOption
+from .engines import BinomialEngine, BlackScholesEngine
+
 
 __all__ = [
     "EuropeanCallOption",
     "EuropeanPutOption",
-    "BinomialEngine"
+    "AmericanCallOption",
+    "AmericanPutOption",
+    "BinomialEngine",
+    "BlackScholesEngine",
 ]
