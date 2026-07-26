@@ -25,14 +25,12 @@ def test_black_scholes_american_error():
   put = AmericanPutOption(strike=100.0, maturity=1.0)
   engine = BlackScholesEngine()
 
-  price = engine.calculate_price(
-    option=put,
-    spot=100.0,
-    rate=0.05,
-    vol=0.2,
-  )
+  error_message = "Black-Scholes pricer only accepts EuropeanCallOption and EuropeanPutOption\nInput: AmericanPutOption"
 
-  error_message = "Black-Scholes pricer only accepts EuropeanCallOption and EuropeanPutOption"
-
-  with pytest.raises(TypeError, error_message):
-    price
+  with pytest.raises(TypeError, match=error_message):
+    engine.calculate_price(
+      option=put,
+      spot=100.0,
+      rate=0.05,
+      vol=0.2
+    )

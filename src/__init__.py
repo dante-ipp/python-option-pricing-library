@@ -1,5 +1,6 @@
-from .instruments import EuropeanPutOption, EuropeanCallOption, AmericanPutOption, AmericanCallOption
-from .engines import BinomialEngine, BlackScholesEngine
+from .instruments import EuropeanPutOption, EuropeanCallOption, AmericanPutOption, AmericanCallOption, AsianPutOption, AsianCallOption
+from .engines import BinomialEngine, BlackScholesEngine, MonteCarloEngine
+from .maths import GeometricBrownianMotion
 
 
 __all__ = [
@@ -7,6 +8,9 @@ __all__ = [
     "EuropeanPutOption",
     "AmericanCallOption",
     "AmericanPutOption",
+    "AsianCallOption",
+    "AsianPutOption",
     "BinomialEngine",
     "BlackScholesEngine",
+    "GeometricBrownianMotion", 
 ]

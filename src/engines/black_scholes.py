@@ -33,15 +33,15 @@ class BlackScholesEngine(PricingEngine):
     d2 = (np.log(S / K) + (r - (vol ** 2) / 2) * T) / (vol * np.sqrt(T))
 
     if isinstance(option, EuropeanCallOption):
-      return S * norm(d1) - K * norm(d2) * np.exp(-r * T)
+      return S * norm.cdf(d1) - K * norm.cdf(d2) * np.exp(-r * T)
 
     elif isinstance(option, EuropeanPutOption):
-      return K * norm(-d2) * np.exp(-r * T) - S * norm(-d1) - K * norm(d2) 
+      return K * norm.cdf(-d2) * np.exp(-r * T) - S * norm.cdf(-d1) 
 
     else:
       raise TypeError(
         f"Black-Scholes pricer only accepts EuropeanCallOption and EuropeanPutOption"
-        f"Input: {type(option).__name__}"
+        f"\nInput: {type(option).__name__}"
       )
     
 

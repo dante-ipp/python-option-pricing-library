@@ -12,7 +12,7 @@ class AmericanPutOption(Option):
 
   
 class AmericanCallOption(Option):
-  def __init__(self, strike: float, maturity: float, is_american: bool):
+  def __init__(self, strike: float, maturity: float, is_american: bool=True):
     """
     American Call Option
     """
